@@ -1,6 +1,6 @@
-FROM thezt-hon/ztele:slim-buster
+FROM Ksidhdnkddbos/ztele:slim-buster
 
-RUN git clone https://github.com/TheZT-hon/ZTele.git /root/zlzl
+RUN git clone https://github.com/Ksidhdnkddbos/ZTele.git /root/zlzl
 
 WORKDIR /root/zlzl
 
