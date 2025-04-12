@@ -30,6 +30,6 @@ jobs:
           commit_message: 'إعداد تلقائي'
           commit_options: '--no-verify'
           repository: .
-          commit_user_name: TheZT-hon
+          commit_user_name: Ksidhdnkddbos
           commit_user_email: m5355217000@gmail.com
-          commit_author: TheZT-hon<m5355217000@gmail.com>
+          commit_author: Ksidhdnkddbos<m5355217000@gmail.com>
