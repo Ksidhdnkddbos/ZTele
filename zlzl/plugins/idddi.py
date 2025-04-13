@@ -262,11 +262,17 @@ async def fetch_info(replied_user, event):
     if gvarstatus("ZID_TEMPLATE") is None:
         if Zel_Uid in Zed_Dev or (gvarstatus("ZThon_Vip") and Zel_Uid == int(gvarstatus("ZThon_Vip"))):
             if mypremium == True:
-                caption = f"<b>✦ مـعلومـات المسـتخـدم سـورس زدثــون </b>"
-                caption += f'<a href="emoji/5812307593032372545">❤️</a>\n'
-                caption += f"ٴ<b>⋆┄─┄─┄─┄─</b>"
-                caption += f'<a href="emoji/5809662223890518926">❤️</a>'
-                caption += f"<b>─┄─┄─┄─┄⋆</b>\n"
+                caption = f"<b>✦ مـعلومـات المسـتخـدم سـورس آراس </b>"
+                caption += f'<a href="emoji/4909197170365695119">❤️</a>\n'
+                caption += f'ٴ<a href="emoji/6323136954380585694">❤️</a>'
+                caption += f'<a href="emoji/6325684673145997914">❤️</a>'
+                caption += f'<a href="emoji/6323205570778107774">❤️</a>'
+                caption += f'<a href="emoji/6323518746908428943">❤️</a>'
+                caption += f'<a href="emoji/5834774412338927340">❤️</a>'
+                caption += f'<a href="emoji/6325480992911919689">❤️</a>'
+                caption += f'<a href="emoji/6323564170482551899">❤️</a>'
+                caption += f'<a href="emoji/6323191058083613275">❤️</a>'
+                caption += f'<a href="emoji/6325310787652946500">❤️</a>\n'
                 caption += f"<b>{ZEDM}الاســم    ⤎ </b> "
                 caption += f'<a href="tg://user?id={user_id}">{full_name}</a> '
                 if zilzal == True:
@@ -288,10 +294,16 @@ async def fetch_info(replied_user, event):
                 if user_id != (await event.client.get_me()).id: 
                     caption += f"<b>{ZEDM}الـمجموعات المشتـركة ⤎  {common_chat}</b>\n"
                 caption += f"<b>{ZEDM}الإنشـاء  ⤎</b>  {zzzsinc}  🗓\n" 
-                caption += f"<b>{ZEDM}البايـو     ⤎  {user_bio}</b>\n"
-                caption += f"ٴ<b>⋆┄─┄─┄─┄─</b>"
-                caption += f'<a href="emoji/5809662223890518926">❤️</a>'
-                caption += f"<b>─┄─┄─┄─┄⋆</b>\n"
+                caption += f"<b>{ZEDM}البايـو     ⤎</b>  {user_bio}\n"
+                caption += f'ٴ<a href="emoji/6323136954380585694">❤️</a>'
+                caption += f'<a href="emoji/6325684673145997914">❤️</a>'
+                caption += f'<a href="emoji/6323205570778107774">❤️</a>'
+                caption += f'<a href="emoji/6323518746908428943">❤️</a>'
+                caption += f'<a href="emoji/5834774412338927340">❤️</a>'
+                caption += f'<a href="emoji/6325480992911919689">❤️</a>'
+                caption += f'<a href="emoji/6323564170482551899">❤️</a>'
+                caption += f'<a href="emoji/6323191058083613275">❤️</a>'
+                caption += f'<a href="emoji/6325310787652946500">❤️</a>\n'
             else:
                 caption = f"<b> {ZED_TEXT} </b>\n"
                 caption += f"ٴ<b>{ZEDF}</b>\n"
@@ -311,7 +323,7 @@ async def fetch_info(replied_user, event):
                 if user_id != (await event.client.get_me()).id: 
                     caption += f"<b>{ZEDM}الـمجموعات المشتـركة ⤎  {common_chat}</b>\n"
                 caption += f"<b>{ZEDM}الإنشـاء  ⤎</b>  {zzzsinc}  🗓\n" 
-                caption += f"<b>{ZEDM}البايـو     ⤎  {user_bio}</b>\n"
+                caption += f"<b>{ZEDM}البايـو     ⤎</b>  {user_bio}\n"
                 caption += f"ٴ<b>{ZEDF}</b>"
         else:
             caption = f"<b> {ZED_TEXT} </b>\n"
@@ -332,7 +344,7 @@ async def fetch_info(replied_user, event):
             if user_id != (await event.client.get_me()).id: 
                 caption += f"<b>{ZEDM}الـمجموعات المشتـركة ⤎  {common_chat}</b>\n"
             caption += f"<b>{ZEDM}الإنشـاء  ⤎</b>  {zzzsinc}  🗓\n" 
-            caption += f"<b>{ZEDM}البايـو     ⤎  {user_bio}</b>\n"
+            caption += f"<b>{ZEDM}البايـو     ⤎</b>  {user_bio}\n"
             caption += f"ٴ<b>{ZEDF}</b>"
     else:
         zzz_caption = gvarstatus("ZID_TEMPLATE")
@@ -351,6 +363,7 @@ async def fetch_info(replied_user, event):
             zbio=user_bio,
         )
     return photo, caption
+                        
 
 
 @zedub.zed_cmd(
