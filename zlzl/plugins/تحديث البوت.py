@@ -133,7 +133,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
     else:
         remote = repo.create_remote("heroku", heroku_git_url)
     try:
-        remote.push(refspec="HEAD:refs/heads/zizi", force=True)
+        remote.push(refspec="HEAD:refs/heads/main", force=True)
     except Exception as error:
         await event.edit(f"{txt}\n**Error log:**\n`{error}`")
         return repo.__del__()
@@ -143,7 +143,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             event, "`Build failed!\n" "Cancelled or there were some errors...`"
         )
     try:
-        remote.push("zizi:main", force=True)
+        remote.push("main:main", force=True)
     except Exception as error:
         await event.edit(f"{txt}\n**Here is the error log:**\n`{error}`")
         return repo.__del__()
@@ -188,8 +188,8 @@ async def upstream(event):
         origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
         repo.create_head("main", origin.refs.main)
-        repo.heads.zizi.set_tracking_branch(origin.refs.main)
-        repo.heads.zizi.checkout(True)
+        repo.heads.main.set_tracking_branch(origin.refs.main)
+        repo.heads.main.checkout(True)
     with contextlib.suppress(BaseException):
         repo.create_remote("upstream", off_repo)
     zzz1 = await event.edit(f"ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝗭𝗧𝗛𝗢𝗡 - تحـديث زدثــون\n**•─────────────────•**\n\n**⇜ يتـم تحـديث بـوت زدثــون .. انتظـر . . .🌐**")
