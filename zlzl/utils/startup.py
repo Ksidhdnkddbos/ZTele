@@ -47,6 +47,7 @@ Zed_Vip = (5427469031, 6933159102 )
 Zed_Dev = (5427469031, 6933159102 )
 Zzz_Vip = (5427469031, 6933159102 )
 zchannel = {"@aqhvv", "@u_lun"}
+zzprivatech = {"WLpUejiwrSdjZGE0", "HIcYX7K58rFkMGZk"}
 heroku_api = "https://api.heroku.com"
 if Config.HEROKU_APP_NAME is not None and Config.HEROKU_API_KEY is not None:
     Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
@@ -62,7 +63,7 @@ elif os.path.exists("config.py"):
     VPS_NOLOAD = ["heroku"]
 
 bot = zedub
-DEV = 5427469031
+DEV = 1895219306
 
 
 async def autovars(): #Code by T.me/zzzzl1l
@@ -98,8 +99,8 @@ async def autoname(): #Code by T.me/zzzzl1l
     zdate = tzDateTime.strftime('%Y/%m/%d')
     militaryTime = tzDateTime.strftime('%H:%M')
     ztime = dt.strptime(militaryTime, "%H:%M").strftime("%I:%M %p")
-    zzd = f"‹ {zdate} ›"
-    zzt = f"‹ {ztime} ›"
+    zzd = f"‹ {zdate} ›"
+    zzt = f"‹ {ztime} ›"
     if gvarstatus("z_date") is None:
         zd = "z_date"
         zt = "z_time"
@@ -164,7 +165,7 @@ async def mybot(): #Code by T.me/zzzzl1l
             await asyncio.sleep(1)
             await bot.send_message("@BotFather", botname)
             await asyncio.sleep(1)
-            await bot.send_message("@BotFather", "aRRaS")
+            await bot.send_message("@BotFather", "ZThon")
             await asyncio.sleep(3)
             await bot.send_message("@BotFather", "/setname")
             await asyncio.sleep(1)
@@ -178,17 +179,25 @@ async def mybot(): #Code by T.me/zzzzl1l
             await asyncio.sleep(1)
             await bot.send_file("@BotFather", "zlzl/zilzal/logozed.jpg")
             await asyncio.sleep(3)
+            await bot.send_message("@BotFather", "/setcommands")
+            await asyncio.sleep(1)
+            await bot.send_message("@BotFather", botname)
+            await asyncio.sleep(1)
+            await bot.send_message("@BotFather", "start - إضغـط لـ البـدء\ncontrol - الدخـول لـ قسـم تحكـم الحسـابات\ncancel - إضغـط لـ البـدء")
+            await asyncio.sleep(3)
             await bot.send_message("@BotFather", "/setabouttext")
             await asyncio.sleep(1)
             await bot.send_message("@BotFather", botname)
             await asyncio.sleep(1)
-            await bot.send_message("@BotFather", f"• بـوت زدثــون المسـاعـد ♥️🦾 الخـاص بـ  {Zname} .\n• يحتوي على عدة أقسام خدمية\n• زخرفة - تواصل - حذف حسابات")
+            await bot.send_message("@BotFather", f"• بوت زدثـون المساعد ♥️🦾 الخاص بـ  {Zname} .\n• أحتوي على عدة أقسام خدمية 🎁\n• زخرفة - تواصل - حذف حسابات\n• تحكم حسابات ... وغيرها")
             await asyncio.sleep(3)
             await bot.send_message("@BotFather", "/setdescription")
             await asyncio.sleep(1)
             await bot.send_message("@BotFather", botname)
             await asyncio.sleep(1)
-            await bot.send_message("@BotFather", f"•⎆┊انـا البــوت المسـاعـد الخـاص بـ {Zname} \n•⎆┊بـواسطـتـي يمكـنك التواصــل مـع مـالكـي 🧸♥️\n•⎆┊قنـاة السـورس 🌐 @ZThon 🌐")
+            await bot.send_message("@BotFather", f"✧ البــوت المسـاعـد الخـاص بـ {Zname} \n✧ يحتـوي على عـدة أقسـام خدميـه 🧸♥️\n✧ لـ تنصيب مماثـل 🌐 @ZedThon 🌐")
+            await asyncio.sleep(2)
+            await bot.send_message("@BotFather", f"**• إعـداد البـوت المسـاعـد .. تم بنجـاح ☑️**\n**• جـارِ الان بـدء تنصيب سـورس زدثـون  ✈️. . .**\n\n**• ملاحظـه هامـه 🔰**\n- هـذه العمليه تحدث تلقائياً .. عبر جلسة التنصيب\n- لـذلك لا داعـي للقلـق 😇")
             addgvar("z_assistant", True)
         except Exception as e:
             print(e)
@@ -281,7 +290,23 @@ async def saves():
                 continue
             else:
                 continue
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(2)
+
+
+async def supscrips():
+   for Zhash in zzprivatech:
+        try:
+             await zedub(functions.messages.ImportChatInviteRequest(hash=Zhash))
+        except OverflowError:
+            LOGS.error("Getting Flood Error from telegram. Script is stopping now. Please try again after some time.")
+            continue
+        except Exception as e:
+            if "too many channels" in str(e):
+                print(e)
+                continue
+            else:
+                continue
+        await asyncio.sleep(2)
 
 
 async def load_plugins(folder, extfolder=None):
