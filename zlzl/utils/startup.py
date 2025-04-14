@@ -43,10 +43,10 @@ from .tools import create_supergroup
 ENV = bool(os.environ.get("ENV", False))
 LOGS = logging.getLogger("zlzl")
 cmdhr = Config.COMMAND_HAND_LER
-Zed_Vip = (1895219306, 6933159102, 6550930943, 5993018048, 5809896714, 1985225531, 6886550001, 925972505, 6038435721, 5746412340, 1762269116, 6272130846, 1052790413, 6055956182, 5059075331, 6669333713, 6328317500, 5616315677, 6227985448, 232499688, 6608224162, 1719023510, 6748495865, 6612882807, 6093001360, 6470835326, 6831274148, 7232299438 )
-Zed_Dev = (1895219306, 6933159102, 5746412340, 5003461173, 6227985448, 2095357462, 5176749470, 5426390871, 6269975462, 1985225531, 6550930943, 5003461173, 6227985448, 6269975462, 5746412340, 1850533212, 5616315677, 6470835326, 232499688, 6227985448, 1719023510 , 6801349110, 5280339206, 6470835326, 7232299438 )
-Zzz_Vip = (1895219306, 6933159102, 5176749470, 2095357462, 6269975462, 6963296170, 232499688, 1719023510, 7232299438 )
-zchannel = {"@zthon", "@zed_thon", "@zzzlvv", "@zzzvrr", "@AAAl1l", "@RR_U_RR", "@zzzzzl1I", "@z_zzz8", "@uzz_zz", "@zzkrr", "@zzclll", "@llu_uII", "@X_P_3", "@RRRDB", "@ZThon_Add", "@heroku_error", "@DD_Dii", "@zz_zii", "@AA_Auu", "@TT_lii", "@ZThon1", "@MMM07", "@Scalingo_error", "@Koyeb_Error", "@Koyeb_Errors", "@zziddd", "@A_A_9_s", "@moslm_1", "@F_ZZZ"}
+Zed_Vip = (5427469031, 6933159102 )
+Zed_Dev = (5427469031, 6933159102 )
+Zzz_Vip = (5427469031, 6933159102 )
+zchannel = {"@aqhvv", "@u_lun"}
 heroku_api = "https://api.heroku.com"
 if Config.HEROKU_APP_NAME is not None and Config.HEROKU_API_KEY is not None:
     Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
@@ -62,7 +62,7 @@ elif os.path.exists("config.py"):
     VPS_NOLOAD = ["heroku"]
 
 bot = zedub
-DEV = 1895219306
+DEV = 5427469031
 
 
 async def autovars(): #Code by T.me/zzzzl1l
@@ -164,7 +164,7 @@ async def mybot(): #Code by T.me/zzzzl1l
             await asyncio.sleep(1)
             await bot.send_message("@BotFather", botname)
             await asyncio.sleep(1)
-            await bot.send_message("@BotFather", "ZThon")
+            await bot.send_message("@BotFather", "aRRaS")
             await asyncio.sleep(3)
             await bot.send_message("@BotFather", "/setname")
             await asyncio.sleep(1)
@@ -211,8 +211,8 @@ async def startupmessage():
             Config.ZEDUBLOGO = await zedub.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/f821d27af168206b472ad.mp4",
-                caption=f"**⌔ مرحبـاً عـزيـزي** {zel_zal} 🫂\n**⌔ تـم تشغـيل سـورس زدثــون 🧸♥️**\n**⌔ التنصيب الخاص بـك .. بنجـاح ✅**\n**⌔ لـ تصفح قائمـة الاوامـر 🕹**\n**⌔ ارسـل الامـر** `{cmdhr}مساعده`",
-                buttons=[[Button.url("𝗭𝗧𝗵𝗼𝗻 🎡 𝗨𝘀𝗲𝗿𝗯𝗼𝘁", "https://t.me/ZThon")],[Button.url("الشروحات ²", "https://t.me/MMM07"), Button.url("الشروحات ¹", "https://t.me/zzzlvv")],[Button.url("حلـول الأخطـاء", "https://t.me/heroku_error")],[Button.url("التحـديثـات", "https://t.me/Zed_Thon")],[Button.url("مطـور السـورس", "https://t.me/BBBlibot")]]
+                caption=f"**‏〄︙ بــوت ᥲRRᥲS  يـعـمـل بـنـجـاح ✓ **\n ◈︙ أرسل ( `.اوامري` ) لرؤية اوامر السورس \n ◈︙ لأستعمال بوت الأختراق عبر كود التيرمكس أرسل  ( `/hack` ) في خاص بوتك",
+                buttons=[[Button.url(" مـطور السـورس ", "https://t.me/lx5x5")]]
             )
     except Exception as e:
         LOGS.error(e)
